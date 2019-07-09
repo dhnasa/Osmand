@@ -55,8 +55,7 @@ public class JSCommandBuilder extends CommandBuilder {
     }
 
     private JSCommandBuilder addCommand(String name, Object... args){
-        listCommands.add(name);
-        listCommands.add(Arrays.toString(args));
+        addToCommandList(name, args);
         Object obj = jsScope.get(name);
         if (obj instanceof Function) {
             Function jsFunction = (Function) obj;
